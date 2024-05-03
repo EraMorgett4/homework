@@ -1,6 +1,7 @@
 # 테킷 FES homework - Avatars 프로젝트
 
 ![죽겠어요..이미지](../images/image%20for%20md/EqHrn.webp)
+
 ~~"(5월 4일 자정이 5/4 00시인줄 알았던 사람의 최후)"~~
 
 <details>
