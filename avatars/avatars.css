@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 20px;
+  height: auto;
+  font-family: Arial, sans-serif;
+  text-align: center; /* 아바타 컨테이너를 중앙 정렬 */
+  vertical-align: middle;
+}
+
+.avatars-container {
+  margin: auto;
+  width: 356px; /* 간격을 고려하여 너비 조정 */
+}
+
+.avatar {
+  float: left; /* 모든 아바타 div를 왼쪽으로 정렬 */
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 10px;
+  overflow: visible; /* 상태 표시원이 아바타 외부에 표시되도록 허용 */
+  border-radius: 50%;
+  display: block;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*이미지가 영역을 온전하게 커버하도록 함 */
+  border-radius: 50%; /* 이미지 자체도 원형으로 잘리도록 */
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: -4px; /* 아바타 원 바깥에 위치 */
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%; /* 상태 표시원의 원형 */
+  background-color: inherit;
+  border: 2px solid white; /* 상태 표시원과 아바타 이미지 사이의 구분을 위한 흰색 테두리 추가 */
+}
+
+.avatar[data-status="online"] .status-indicator {
+  background-color: #4cfe88; /* 온라인 상태의 녹색 */
+}
+
+.avatar[data-status="offline"] .status-indicator {
+  background-color: #dbdbdb; /* 오프라인 상태의 회색 */
+}
+
+/* flex 지원환경에서의 구성 */
+@supports (display: flex) {
+  .avatars-container {
+    display: flex; /* flexbox 레이아웃 활성화 */
+    flex-wrap: wrap-reverse; /* 아바타가 여러 줄로 나눠서 표시되도록 설정 */
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 세로축에서도 중앙 정렬 */
+    margin: 0 auto; /* 컨테이너를 수평 중앙에 위치시킴 */
+    width: 365px; /* 너비를 자동으로 설정하여 flex 아이템에 맞춤 */
+    padding: 20px; /* 상하좌우 여백 설정 */
+  }
+
+  .avatar {
+    margin: 10px; /* 각 아바타 사이의 간격을 조정 */
+    float: none; /* flexbox를 사용하므로 float 속성을 해제 */
+  }
+}
