@@ -64,13 +64,10 @@
 <br/>
 ~~아 그냥 참고 하라고~ㅋㅋ... ㅠㅠ~~ 일뻔 했지만, 다음 사이트를 통해 개념을 복습하고 활용하였습니다.
 
-1. [Inpa Dev](https://inpa.tistory.com/entry/JS-%F0%9F%93%9A-HTML-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8Bdata-%EC%86%8D%EC%84%B1) 는 지난 수업시간 강조하셨던 crossorigin 개념을 공부하면서 찾아낸 기술 블로그로, 전반적인 FE 지식을 깔끔하게 정리한 곳입니다.
-<br/>
-2. [Flexbox froggy](https://flexboxfroggy.com/#ko) 는 `flex`와 관련된 속성을 훈련할 수 있게 게임형태로 되어있던 사이트로, 학우분들의 추천으로 확인하게 되었습니다. 실제 특성을 연습해보는데에 도움이 되었습니다.
-   <br/>
-3. [heropy.dev](https://www.heropy.dev/p/Ha29GI) 또한 CSS Flex, Grid, SCSS 등 다양한 것들이 이해하기 쉬운 시각적 자료로 설명되어있던 개발블로그였습니다. flex 개념을 확고히 하는데에 도움이 되었습니다.
-   <br/>
-4. 그 외엔 구글링과, 정규 수업시간 중 슬비쌤께서 실습하신 부분을 복습 및 활용하였습니다.
+1. [Inpa Dev](https://inpa.tistory.com/entry/JS-%F0%9F%93%9A-HTML-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8Bdata-%EC%86%8D%EC%84%B1) 는 지난 수업시간 강조하셨던 crossorigin 개념을 공부하면서 찾아낸 기술 블로그로, 전반적인 FE 지식을 깔끔하게 정리한 곳입니다.<br/>
+2. [Flexbox froggy](https://flexboxfroggy.com/#ko) 는 `flex`와 관련된 속성을 훈련할 수 있게 게임형태로 되어있던 사이트로, 학우분들의 추천으로 확인하게 되었습니다. 실제 특성을 연습해보는데에 도움이 되었습니다.<br/>
+3. [heropy.dev](https://www.heropy.dev/p/Ha29GI) 또한 CSS Flex, Grid, SCSS 등 다양한 것들이 이해하기 쉬운 시각적 자료로 설명되어있던 개발블로그였습니다. flex 개념을 확고히 하는데에 도움이 되었습니다.<br/>
+4. 그 외엔 구글링과, 정규 수업시간 중 슬비쌤께서 실습하신 부분을 복습 및 활용하였습니다.<br/>
 
 </div>
 </details>
