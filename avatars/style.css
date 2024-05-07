@@ -1,0 +1,65 @@
+:root {
+  --base: "SUIT Variable", sans-serif;
+}
+
+body {
+  font-family: var(--base);
+}
+
+.avatar {
+  /* 변수 선언 */
+  --size: 64px;
+
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  inline-size: var(--size);
+  block-size: var(--size);
+
+  img {
+    /* 변수 선언 */
+    inline-size: inherit;
+    block-size: inherit;
+    border-radius: 50%;
+  }
+
+  figcaption {
+    /* 변수 갱신 */
+    --size: 18px;
+
+    inline-size: var(--size);
+    block-size: var(--size);
+    background-color: gray;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-sizing: inherit;
+  }
+
+  &.is-online {
+    figcaption {
+      background-color: lime;
+    }
+  }
+}
+
+/* member layout */
+.member {
+  border: 1px solid red;
+  /* inline-size: ; */
+
+  ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin: 0;
+    display: flow-root;
+  }
+
+  li {
+    margin: 10px;
+    float: left;
+  }
+}
