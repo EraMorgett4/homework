@@ -6,7 +6,7 @@ body {
   font-family: var(--base);
 }
 
-.avatar {
+.avatars {
   /* 변수 선언 */
   --size: 64px;
 
@@ -48,6 +48,16 @@ body {
 
 /* member layout */
 .member {
+  --avatar-size: 64px;
+  --avatar-count: 4;
+  --avatar-spacing: 10px;
+  --container-size: calc(
+    (var(--avatar-size) * var(--avatar-count)) +
+      (var(--avatar-spacing) * (var(--avatar-count) * 2))
+  );
+
+  inline-size: var(--container-size);
+  margin: 0 auto;
   border: 1px solid red;
   /* inline-size: ; */
 
@@ -61,5 +71,24 @@ body {
   li {
     margin: 10px;
     float: left;
+  }
+}
+
+@supports (display: flex) {
+  .member {
+    ul {
+      display: flex;
+      /* 부모 컨테이너 크기를 줄여놨기 때문에, overflow가 일어남. */
+      /* 이를 방지하기 위해 wrap 사용 */
+      flex-flow: row wrap;
+    }
+
+    li {
+      float: none;
+    }
+
+    li:nth-child(-n + 4) {
+      order: 1;
+    }
   }
 }
