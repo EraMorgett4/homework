@@ -11,4 +11,4 @@
 - 스타일링
     - overflow: visible의 경우 기본값이므로 선언할 이유가 없음.
     - float: left를 지정하면 display가 block으로 렌더링되기때문에 float 속성과 display: block을 함께 선언할 필요는 없음.
-    - flex-wrap: wrap-reverse로 설정할 경우 8번 이미지부터 1번 이미지 순서로 배치됨. 5~8번 / 1~4번 순으로 배치되어야 함.
+    - flex-wrap: wrap-reverse로 설정할 경우 8번 이미지부터 1번 이미지 순서로 배치됨. 5 ~ 8번 / 1 ~ 4번 순으로 배치되어야 함.
