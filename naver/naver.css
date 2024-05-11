@@ -1,0 +1,183 @@
+html {
+  --base-font-size: 16px;
+}
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --base-font-family: "SUIT Variable", sans-serif;
+  --base-color: #181818;
+  --base-font-size: 16px;
+  --base-padding-size: 20px;
+  --base-input-font-size: 14px;
+  --base-margin-size: 10px;
+  --mobile-width-size: 768px; /*48rem*/
+  --base-border-size: 1px;
+  --focus-style-custom: #24388d;
+  --bgcolor-naver-green: #03cf5d;
+  --base-input-color: #dadada;
+  --base-focus-color: #e9f0fd;
+  --white: #fff;
+}
+
+/* 기본 글자 크기 및 색상 */
+body {
+  font-family: var(--base-font-family);
+  font-size: var(--base-font-size);
+  color: var(--base-color);
+  width: 100%;
+}
+
+/* Login Container */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: var(--base-padding-size);
+}
+
+/* 로고 */
+.logo {
+  width: 14.375rem; /*230px;*/
+  margin-bottom: 2rem;
+}
+
+/* Form Styles */
+form {
+  width: 100%;
+  max-width: var(--mobile-width-size);
+  padding: var(--base-padding-size);
+}
+
+/* 폼 그룹(ID/PW/로그인버튼) */
+.form-group {
+  margin-bottom: var(--base-margin-size);
+}
+
+input[type="text"],
+input[type="password"] {
+  /* 입력 서식 스타일링 기본 요구사항*/
+  /* 글자크기, 세로크기, 테두리 선 색상, 배경색상 */
+  font-size: var(--base-input-font-size);
+  height: 2.8125rem; /*45px;*/
+  border: var(--base-border-size) solid var(--base-input-color);
+  background-color: var(--white);
+
+  width: 100%;
+  padding: 0 0.9375rem; /*15px*/
+  /* 전환 효과 */
+  transition: border-color 0.3s, background-color 0.3s;
+
+  /* 키보드, 마우스 동작 시, 포커스 상태 표현 변경을 위한 코드 */
+  &:focus,
+  &:focus-visible,
+  &:hover {
+    border-color: var(--bgcolor-naver-green);
+    background-color: var(--base-focus-color);
+    outline: 1px solid var(--bgcolor-naver-green);
+  }
+}
+
+button {
+  /*로그인 버튼 스타일링 기본 요구사항 */
+  /* 글자크기, 세로크기, 글자색상, 배경색상, 위쪽여백 */
+  font-size: var(--base-font-size);
+  height: 2.8125rem; /*45px;*/
+  color: var(--white);
+  background-color: var(--bgcolor-naver-green);
+  margin-top: 10px; /* form-group의 margin-bottom이 10px이므로 */
+
+  width: 100%;
+  padding: 0 0.09375rem; /*15px;*/
+  border: none;
+}
+
+/* 옵션-로그인상태 유지, IP보안 */
+.options {
+  display: flex;
+  justify-content: flex-end; /* 모바일에선 오른쪽에 정렬 */
+  margin-top: var(--base-margin-size);
+  position: relative;
+
+  /* 체크박스 안보이게 하기 */
+  .checkbox-content > input {
+    position: absolute;
+    appearance: none;
+  }
+
+  /* 이미지-체크박스 보이게 하기 */
+  .custom-checkbox {
+    width: 1.5rem; /*24px;*/
+    height: 1.5rem; /*24px;*/
+    background: url(/naver/icons/unchecked.svg) no-repeat 0 0 / contain;
+    display: inline-block;
+    vertical-align: middle;
+
+    &:focus,
+    &:focus-visible {
+      border: 1px solid var(--focus-style-custom);
+    }
+  }
+
+  /* 이미지-체크박스 체크상태에서 녹색으로 */
+  #keep-logged-in:checked + .custom-checkbox {
+    background: url(/naver/icons/checked.svg) no-repeat 0 0 / contain;
+  }
+
+  .custom-checkbox:focus,
+  .custom-checkbox:focus-visible {
+    outline: var(--focus-style-custom);
+  }
+
+  /* ON/OFF 토글 */
+  .ip-toggle.on {
+    color: var(--bgcolor-naver-green);
+  }
+
+  .ip-toggle {
+    color: var(--base-color);
+
+    &:focus,
+    &:focus-visible {
+      border: var(--base-border-size) solid var(--focus-style-custom);
+    }
+  }
+}
+
+.ip-security {
+  display: none; /* 모바일 환경에서 숨김 */
+}
+
+/* 미디어 쿼리 : 데스크톱 환경에서의 설정 */
+@media (min-width: 48rem) {
+  .login-form {
+    display: flex;
+    width: 31.25rem; /*500px;*/
+    flex-direction: column;
+    align-items: center;
+    padding: var(--base-padding-size);
+  }
+
+  .login-form input[type="text"],
+  .login-form input[type="password"],
+  .login-form button {
+    width: 28.75rem; /*460px;*/
+  }
+
+  .options {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: var(--base-margin-size);
+  }
+
+  .ip-security {
+    display: inline-block;
+    color: inherit;
+
+    text-decoration: none; /* 밑줄 없애기 */
+  }
+}

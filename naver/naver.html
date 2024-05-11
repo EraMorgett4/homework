@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>네이버 로그인</title>
+  <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="/naver/naver.css">
+
+</head>
+
+<body>
+
+  <div class="login-container">
+    <img src="/naver.svg" alt="Naver_logo" class="logo" onerror="this.onerror=null; this.src='/naver.png'">
+    <!-- 폼으로 묶음 -->
+    <form action="#" method="post" class="login-form">
+      <!-- 아이디 입력 란 -->
+      <div class="form-group">
+        <!-- <label for="user-id">아이디(이메일)</label> -->
+        <input type="text" id="user-id" name="user-id" required placeholder="아이디(이메일)" />
+      </div>
+      <!-- 비밀번호 입력 란 -->
+      <div class="form-group">
+        <!-- <label for="password">비밀번호</label> -->
+        <input type="password" id="password" name="password" required placeholder="비밀번호" />
+      </div>
+      <!-- 로그인 버튼 -->
+      <div class="login-button" tabindex="-1">
+        <button type="submit" tabindex="-1">로그인</button>
+      </div>
+
+      <!-- 옵션 블록 -->
+      <div class="options">
+        <!-- 로그인 상태 체크박스 -->
+        <div class="form-checkbox">
+          <label for="keep-logged-in" class="checkbox-content">
+            <input type="checkbox" id="keep-logged-in" name="keep-logged-in" />
+            <span class="custom-checkbox" tabindex="0"></span>
+            로그인 상태 유지
+          </label>
+        </div>
+        <!-- ip보안 -->
+        <div class="ip-security">
+          <a href="/naver/ip_security.html" target="_blank" class="ip-security">IP 보안</a>
+          <span id="toggle-status" class="ip-toggle" tabindex="0">OFF</span>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var toggleElement = document.getElementById('toggle-status');
+
+      function handleToggle(event) {
+        if (event.type === 'keydown' && event.keyCode !== 13) {
+          return;
+        }
+
+        if (this.textContent === 'OFF') {
+          this.textContent = 'ON';
+          this.classList.add('on'); // 'on' 클래스를 추가하여 스타일 변경
+        } else {
+          this.textContent = 'OFF';
+          this.classList.remove('on'); // 'on' 클래스를 제거하여 스타일 복원
+        }
+
+        event.preventDefault();
+      }
+      toggleElement.addEventListener('click', handleToggle);
+      toggleElement.addEventListener('keydown', handleToggle);
+    });
+  </script>
+
+</body>
+
+</html>
