@@ -21,17 +21,18 @@
     <form action="#" method="post" class="login-form">
       <!-- 아이디 입력 란 -->
       <div class="form-group">
-        <!-- <label for="user-id">아이디(이메일)</label> -->
+        <label for="user-id" class="hidden">아이디(이메일)</label>
         <input type="text" id="user-id" name="user-id" required placeholder="아이디(이메일)" />
       </div>
       <!-- 비밀번호 입력 란 -->
       <div class="form-group">
-        <!-- <label for="password">비밀번호</label> -->
+        <label for="password" class="hidden">비밀번호</label>
         <input type="password" id="password" name="password" required placeholder="비밀번호" />
       </div>
       <!-- 로그인 버튼 -->
       <div class="login-button" tabindex="-1">
-        <button type="submit" tabindex="-1">로그인</button>
+        <label for="login-button" class="hidden" tabindex="-1">로그인 버튼</label>
+        <button type="submit" id="login-button" tabindex="-1">로그인</button>
       </div>
 
       <!-- 옵션 블록 -->
@@ -46,8 +47,10 @@
         </div>
         <!-- ip보안 -->
         <div class="ip-security">
-          <a href="/naver/ip_security.html" target="_blank" class="ip-security">IP 보안</a>
-          <span id="toggle-status" class="ip-toggle" tabindex="0">OFF</span>
+          <label for="toggle-status">
+            <a href="/naver/ip_security.html" target="_blank" class="ip-security">IP 보안</a>
+            <span id="toggle-status" class="ip-toggle" tabindex="0" role="button">OFF</span>
+          </label>
         </div>
       </div>
     </form>

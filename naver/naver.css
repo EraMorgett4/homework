@@ -2,6 +2,19 @@ html {
   --base-font-size: 16px;
 }
 
+/* 웹 접근성을 고려한, 라벨 클래스 hidden */
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+}
+
 /* Basic Reset */
 * {
   margin: 0;
@@ -118,7 +131,7 @@ button {
 
     &:focus,
     &:focus-visible {
-      border: 1px solid var(--focus-style-custom);
+      border: var(--base-border-size) solid var(--focus-style-custom);
     }
   }
 
