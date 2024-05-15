@@ -107,7 +107,42 @@
 
 ### 피드백 후 코드 수정 (24/05/15)
 
-1. **ON/OFF 토글 구현방식 변경**
+1. **로고 부분 마크업 방식 변경**
+
+기존 JS의 onerror 특성을 활용하였던 방식에서, `<picture> ~ <img>` 구조로 시멘틱하게 활용하였습니다. 더불어 `<h1>` 요소 활용하여 대제목 자체를 로고로 설정하였습니다. 네이버 홈으로 연결되도록 하이퍼링크를 추가하였습니다. 그 외에 피드백 사항에 맞도록 수정하였습니다. 기존 이미지 파일의 해상도가 떨어져 더 높은 해상도로 figma에서 export 하여, 크기는 기존 크기에 맞게 조정하였습니다.
+
+   - 변경 전 html
+      ```html
+      <img src="/naver.svg" alt="Naver" class="logo" onerror="this.onerror=null; this.src='/naver.png'">
+      ```
+
+   - 변경 후 html
+      ```html
+      <h1>
+         <a href="https://www.naver.com" rel="noopener noreferrer">
+            <picture class="picture-logo">
+               <source srcset="/naver/naver.svg" type="image/svg+xml" />
+               <img src="/naver/naver.png" alt="Naver_logo" class="logo" />
+            </picture>
+         </a>
+      </h1>
+      ```
+
+   - 추가된 css
+      ```css
+      .picture-logo {
+         display: inline-block;
+         width: 14.375rem;
+         height: auto;
+         
+         .logo{
+            width: 100%;
+            height: auto;
+         }
+      }
+      ```
+
+2. **ON/OFF 토글 구현방식 변경**
 
  기존엔 `<span>`을 활용하여 JS를 통해 구현하였으나, 피드백 내용을 바탕으로 checkbox, label, 가상선택자를 사용하여 이를 구현하도록 코드를 수정하였습니다. (prettier 설정때문에 css부분에서 의도와 다른 탭/엔터가 삽입되었을 수 있습니다.)
 
@@ -193,7 +228,15 @@
       }
       ```
 
-2. **로그인 상태 유지 코드 수정**
+
+
+3. **로그인 상태 유지 코드 수정**
+
+(수정 중)
+
+4. **마이너한 수정**
+   - 아이디 입력 서식의 type 속성을 text에서 email로 변경하였습니다.
+   - 
 
 (수정 중)
 

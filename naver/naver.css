@@ -60,8 +60,15 @@ body {
 }*/
 
 .picture-logo {
-  width: 14.375rem * 0.25;
+  display: inline-block;
+  width: 14.375rem;
+  height: auto;
   /* margin-bottom: 2rem; */
+  
+  .logo{
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* Form Styles */
