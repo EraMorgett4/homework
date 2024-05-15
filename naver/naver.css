@@ -33,6 +33,7 @@ html {
   --base-input-color: #dadada;
   --base-focus-color: #e9f0fd;
   --white: #fff;
+  --gray: gray;
 }
 
 /* 기본 글자 크기 및 색상 */
@@ -53,9 +54,14 @@ body {
 }
 
 /* 로고 */
-.logo {
+/*.logo {
   width: 14.375rem; /*230px;*/
-  margin-bottom: 2rem;
+/*margin-bottom: 2rem;
+}*/
+
+.picture-logo {
+  width: 14.375rem * 0.25;
+  /* margin-bottom: 2rem; */
 }
 
 /* Form Styles */
@@ -118,7 +124,9 @@ button {
   /* 체크박스 안보이게 하기 */
   .checkbox-content > input {
     position: absolute;
-    appearance: none;
+    /* appearance: none; */
+    display: none;
+    border: 1px solid red;
   }
 
   /* 이미지-체크박스 보이게 하기 */
@@ -144,23 +152,9 @@ button {
   .custom-checkbox:focus-visible {
     outline: var(--focus-style-custom);
   }
-
-  /* ON/OFF 토글 */
-  .ip-toggle.on {
-    color: var(--bgcolor-naver-green);
-  }
-
-  .ip-toggle {
-    color: var(--base-color);
-
-    &:focus,
-    &:focus-visible {
-      border: var(--base-border-size) solid var(--focus-style-custom);
-    }
-  }
 }
 
-.ip-security {
+.ip-toggle {
   display: none; /* 모바일 환경에서 숨김 */
 }
 
@@ -187,10 +181,39 @@ button {
     margin-top: var(--base-margin-size);
   }
 
-  .ip-security {
+  /* ip 보안 토글 피드백 후 수정 */
+  /* 기존 코드(JS활용코드) -> label, 가상선택자, checkbox 사용 */
+  .ip-toggle {
     display: inline-block;
-    color: inherit;
+    position: relative;
+    text-decoration: none; /* 밑줄 없애기*/
 
-    text-decoration: none; /* 밑줄 없애기 */
+    input {
+      appearance: none;
+      position: absolute;
+
+      &:focus-visible + label {
+        outline: var(--base-border-size) solid var(--focus-style-custom);
+        border-radius: var(--base-border-size);
+      }
+
+      &:checked + label {
+        &::before {
+          content: "";
+        }
+
+        &::after {
+          content: "ON";
+          color: var(--bgcolor-naver-green);
+        }
+      }
+    }
+
+    label {
+      &::before {
+        content: "OFF";
+        color: var(--gray);
+      }
+    }
   }
 }

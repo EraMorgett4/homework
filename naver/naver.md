@@ -2,7 +2,8 @@
 
 - ## 구조 설계
 
-  ![마크업](../images/image%20for%20md/markup.png)
+  HTML 손 마크업
+   <img src="/images/image for md/markup.png" width="50%" title="HTML 손 마크업" alt="markupImage"></img><br/>
 
 <details>
 <summary>과제 요구사항</summary> 
@@ -101,3 +102,134 @@
 
 - 대부분의 코드는 수업시간에 배운것을 토대로 하였습니다.
 - JS 부분은 [생활코딩](https://opentutorials.org/course/1375/6761)을 참고하였습니다.
+
+******
+
+### 피드백 후 코드 수정 (24/05/15)
+
+1. **ON/OFF 토글 구현방식 변경**
+
+ 기존엔 `<span>`을 활용하여 JS를 통해 구현하였으나, 피드백 내용을 바탕으로 checkbox, label, 가상선택자를 사용하여 이를 구현하도록 코드를 수정하였습니다. (prettier 설정때문에 css부분에서 의도와 다른 탭/엔터가 삽입되었을 수 있습니다.)
+
+   - 변경 전 html
+
+      ```html
+      <div class="ip-security">
+         <label for="toggle-status">
+            <a href="/naver/ip_security.html" target="_blank" class="ip-security">IP 보안</a>
+            <span id="toggle-status" class="ip-toggle" tabindex="0" role="button">OFF</span>
+         </label>
+      </div>
+      ```
+
+   - 변경 후 html
+
+      ```html
+      <span class="ip-toggle">
+         <a href="/naver/ip_security.html" target="_blank" class="ip-security">IP 보안</a>
+         <input type="checkbox" name="ip-toggle-checkbox" id="ip-toggle-checkbox" />
+         <label for="ip-security"></label>
+      </span>
+      ```
+   - 변경 전 css
+
+      ```css
+      .options {
+         /* 중략 */
+
+         /* ON/OFF 토글 */
+         .ip-toggle.on {
+            color: var(--bgcolor-naver-green);
+         }
+
+         .ip-toggle {
+            color: var(--base-color);
+
+            &:focus,
+            &:focus-visible {
+            border: var(--base-border-size) solid var(--focus-style-custom);
+            }
+         }
+      }
+      ```
+
+   - 변경 후 css
+
+      ```css
+      @media (min-width: 48rem) {
+         .ip-toggle {
+         display: inline-block;
+         position: relative;
+         text-decoration: none; /* 밑줄 없애기*/
+
+         input {
+            appearance: none;
+            position: absolute;
+
+            &:focus-visible + label {
+               outline: var(--base-border-size) solid var(--focus-style-custom);
+               border-radius: var(--base-border-size);
+            }
+
+            &:checked + label {
+               &::before {
+               content: "";
+               }
+
+               &::after {
+               content: "ON";
+               color: var(--bgcolor-naver-green);
+               }
+            }
+         }
+
+         label {
+            &::before {
+               content: "OFF";
+               color: var(--gray);
+               }
+            }
+         }
+      }
+      ```
+
+2. **로그인 상태 유지 코드 수정**
+
+(수정 중)
+
+******
+###### 피드백 기반 수정 후기
+- 이제야 좀 시멘틱 마크업 구조가 눈에 들어오기 시작했고, 실습을 토대로 연습하여 경험이 쌓이면 스스로도 작성할 수 있을 듯한 자신감이 생겼다.
+- 복습(이전 수업의 실습코드 탐색 및 관련 키워드 구글링)의 중요성을 여실히 느꼈다.
+- 여지껏 포커스 상태에서 `<input>`부분의 동작은 모두 엔터키로 동작하는 줄 알았는데, checkbox의 경우 space 가 기본이었다.
+- <details><summary>위 부분에 대한 GPT 답변</summary><div markdown="1">
+
+
+   ## 스페이스바로 조작할 수 있는 HTML Input 요소
+
+   HTML에서 접근성과 사용 편의성을 위해 스페이스바로 조작할 수 있는 여러 `input` 요소가 있습니다. 여기서는 이러한 요소들을 나열하고 스페이스바로 어떻게 조작할 수 있는지 설명합니다.
+
+   ### 체크박스 입력
+
+   - **요소**: `<input type="checkbox">`
+   - **조작 방법**: 포커스가 있을 때, 스페이스바를 누르면 체크박스의 상태가 체크됨과 체크 해제됨 사이에서 전환됩니다.
+   - **MDN 문서**: [MDN Web Docs - `<input type="checkbox">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox)
+
+   ### 라디오 버튼 입력
+
+   - **요소**: `<input type="radio">`
+   - **조작 방법**: 포커스가 있을 때, 스페이스바를 누르면 라디오 버튼이 선택됩니다. 라디오 버튼 그룹 내에서는 하나만 선택할 수 있습니다.
+   - **MDN 문서**: [MDN Web Docs - `<input type="radio">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio)
+
+   ### 버튼 요소
+
+   - **요소들**: `<button>`, `<input type="button">`, `<input type="submit">`, `<input type="reset">`
+   - **조작 방법**: 포커스가 있을 때, 스페이스바를 누르면 버튼이 활성화되어 기본 동작(예: 폼 제출, 리셋 등)이 실행됩니다.
+   - **MDN 문서**: 
+   - [MDN Web Docs - `<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+   - [MDN Web Docs - `<input type="button">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button)
+   - [MDN Web Docs - `<input type="submit">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit)
+   - [MDN Web Docs - `<input type="reset">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/reset)
+
+   </div>
+   </details>

@@ -16,9 +16,24 @@
 <body>
 
   <div class="login-container">
-    <img src="/naver.svg" alt="Naver_logo" class="logo" onerror="this.onerror=null; this.src='/naver.png'">
+    <!-- 로고 피드백 받은 후 수정 -->
+    <h1>
+      <a href="/naver/naver.html" rel="noopener noreferrer">
+        <picture class="picture-logo">
+          <source srcset="/naver/naver.svg" type="image/svg+xml" />
+          <img src="/naver/naver.png" alt="Naver_logo" class="logo" />
+        </picture>
+      </a>
+    </h1>
+    <!-- <img src="/naver.svg" alt="Naver_logo" class="logo" onerror="this.onerror=null; this.src='/naver/naver.png'"> -->
+    <!-- <picture>
+      <source srcset="/naver/naver.png, /naver.svg 768w" />
+      <img src="/naver.svg" alt="Naver_logo" class="logo" />
+    </picture> -->
+
     <!-- 폼으로 묶음 -->
     <form action="#" method="post" class="login-form">
+
       <!-- 아이디 입력 란 -->
       <div class="form-group">
         <label for="user-id" class="hidden">아이디(이메일)</label>
@@ -30,9 +45,9 @@
         <input type="password" id="password" name="password" required placeholder="비밀번호" />
       </div>
       <!-- 로그인 버튼 -->
-      <div class="login-button" tabindex="-1">
-        <label for="login-button" class="hidden" tabindex="-1">로그인 버튼</label>
-        <button type="submit" id="login-button" tabindex="-1">로그인</button>
+      <div class="login-button">
+        <label for="login-button" class="hidden">로그인 버튼</label>
+        <button type="submit" id="login-button">로그인</button>
       </div>
 
       <!-- 옵션 블록 -->
@@ -45,18 +60,28 @@
             로그인 상태 유지
           </label>
         </div>
+
         <!-- ip보안 -->
-        <div class="ip-security">
+        <!-- <div class="ip-security">
           <label for="toggle-status">
             <a href="/naver/ip_security.html" target="_blank" class="ip-security">IP 보안</a>
-            <span id="toggle-status" class="ip-toggle" tabindex="0" role="button">OFF</span>
-          </label>
-        </div>
+            <span id="toggle-status" class="ip-toggle" tabindex="0" role="button">OFF</span> -->
+        <!-- </label> -->
+        <!-- </div> -->
+
+        <!-- ip보안 토글 -->
+        <!-- 피드백 후 수정된 코드 -->
+
+        <span class="ip-toggle">
+          <a href="/naver/ip_security.html" target="_blank" class="ip-security">IP 보안</a>
+          <input type="checkbox" name="ip-toggle-checkbox" id="ip-toggle-checkbox" />
+          <label for="ip-security"></label>
+        </span>
       </div>
     </form>
   </div>
 
-  <script>
+  <!-- <script>
     document.addEventListener('DOMContentLoaded', function () {
       var toggleElement = document.getElementById('toggle-status');
 
@@ -78,7 +103,7 @@
       toggleElement.addEventListener('click', handleToggle);
       toggleElement.addEventListener('keydown', handleToggle);
     });
-  </script>
+  </script> -->
 
 </body>
 
