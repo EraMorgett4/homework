@@ -3,6 +3,7 @@
 - ## 구조 설계
 
   HTML 손 마크업
+  
    <img src="/images/image for md/markup.png" width="50%" title="HTML 손 마크업" alt="markupImage"></img><br/>
 
 <details>
