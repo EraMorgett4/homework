@@ -1,0 +1,203 @@
+@import url(/apple/styles/reset.css);
+@import url(/apple/styles/theme.css);
+@import url(/apple/styles/base.css);
+
+/* Small Screen 기준 먼저 */
+.card-wrapper {
+  container-type: inline-size;
+
+  /* 카드 공통 기본 서식 설정(디폴트: 다크) */
+  .card {
+    padding-top: var(--large-spacing);
+
+    height: var(--size);
+    block-size: var(--size);
+    /* 카드 내 서식 */
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: var(--small-spacing);
+
+    /* 카드 내 배경이미지 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: var(--white);
+
+    /* 카드 내부 요소 스타일 정의 */
+    /* 제품명 */
+    h2 {
+      order: 1;
+      font-size: var(--large-text);
+    }
+
+    /* 설명, 출시일 */
+    p {
+      order: 2;
+
+      &.explanation {
+        font-size: var(--base-text);
+        line-height: var(--line-normal);
+      }
+
+      &.release-date {
+        order: 3;
+        font-size: var(--small-text);
+        color: var(--gray);
+      }
+    }
+
+    /* 버튼들 */
+    ul {
+      order: 4;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      justify-items: center;
+
+      gap: var(--base-spacing);
+      font-size: var(--xx-small-text);
+
+      /* 기본 포맷 설정 */
+      li {
+        padding: var(--x-small-spacing) var(--small-spacing);
+        background-color: var(--blue-300);
+        border: 1px solid var(--blue-300);
+        border-radius: 1rem;
+
+        &:hover {
+          background-color: var(--blue-200);
+        }
+      }
+
+      li.price {
+        background-color: transparent;
+        a {
+          color: var(--blue-200);
+        }
+
+        &:hover {
+          background-color: var(--blue-200);
+          a {
+            color: var(--white);
+          }
+        }
+      }
+    }
+  }
+
+  /* 라이트 모드 카드 기본 서식 설정  */
+  .light {
+    color: var(--black);
+
+    /* 카드 내부 요소 스타일 정의 */
+
+    /* 버튼들 */
+    ul {
+      li {
+        background-color: var(--black);
+        border: 1px solid var(--black);
+        border-radius: 1rem;
+        color: var(--white);
+
+        &:hover {
+          background-color: var(--black-focused);
+        }
+      }
+
+      li.price {
+        background-color: transparent;
+        a {
+          color: var(--black);
+        }
+
+        &:hover {
+          background-color: var(--black-focused);
+          a {
+            color: var(--white);
+          }
+        }
+      }
+    }
+  }
+
+  /* li 요소 theme 선정에 따라 다르게 설정 */
+  /* article.dark li.more {
+    border: 3px solid hotpink;
+  } */
+
+  /* 카드 종류 따른 변화 */
+  .card-1 {
+    background-image: url(/apple/products/ipad_pro.jpeg);
+  }
+
+  .card-2 {
+    background-image: url(/apple/products/ipad_air.jpeg);
+  }
+
+  .card-3 {
+    background-image: url(/apple/products/iphone15_pro.jpeg);
+  }
+
+  .card-4 {
+    background-image: url(/apple/products/iphone15.jpeg);
+  }
+
+  .card-5 {
+    background-image: url(/apple/products/apple_watch.jpeg);
+  }
+
+  .card-6 {
+    background-image: url(/apple/products/macbook_air.jpeg);
+  }
+
+  .card-7 {
+    background-image: url(/apple/products/airpods_pro.jpeg);
+  }
+
+  /* 컨테이너 사이즈에 따른 배경이미지 조절 */
+  @container (min-width: 1024px) {
+    .card {
+      padding-top: var(--extra-large-spacing);
+    }
+    .card h2 {
+      font-size: var(--extra-large-text);
+    }
+
+    .card .explanation {
+      font-size: var(--medium-text);
+    }
+
+    .card ul {
+      font-size: var(--x-small-text);
+    }
+
+    .card-1 {
+      background-image: url(/apple/products/ipad_pro_wide.jpeg);
+    }
+    .card-2 {
+      background-image: url(/apple/products/ipad_air_wide.jpeg);
+    }
+
+    .card-3 {
+      background-image: url(/apple/products/iphone15_pro_wide.jpeg);
+    }
+
+    .card-4 {
+      background-image: url(/apple/products/iphone15_2x.jpeg);
+    }
+
+    .card-5 {
+      background-image: url(/apple/products/apple_watch_2x.jpeg);
+    }
+
+    .card-6 {
+      background-image: url(/apple/products/macbook_air_2x.jpeg);
+    }
+
+    .card-7 {
+      background-image: url(/apple/products/airpods_pro_2x.jpeg);
+    }
+  }
+}

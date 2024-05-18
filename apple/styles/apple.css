@@ -1,0 +1,49 @@
+@import url(/apple/styles/reset.css);
+@import url(/apple/styles/base.css);
+@import url(/apple/styles/theme.css);
+@import url(/apple/styles/card-component.css);
+
+/* 카드 레이아웃 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.upper-section {
+  display: grid;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.lower-section {
+  display: grid;
+  /* 임시 지정 */
+  gap: 1rem;
+}
+
+/* 중단점 설정 */
+
+@media (max-width: 1024px) {
+  .upper-section {
+    grid-template-columns: minmax(200px, 1fr);
+  }
+
+  .lower-section {
+    grid-template-columns: minmax(200px, 1fr);
+  }
+
+  br.small {
+    display: inline;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lower-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  br.small {
+    display: none;
+  }
+}
