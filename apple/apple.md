@@ -2,6 +2,10 @@
 
 그리드를 사용하여 구현하고 구현 결과를 움직이는 이미지로 생성하여 삽입해주세요.
 
+GIF파일이 너무 용량이 커서 아래와 같이 첨부합니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Nubkvpzw_0Y?si=9uVnlwjaC8Vid0VM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 # 테킷 FES homework - Apple 프로젝트
 
 - ## 구조 설계
