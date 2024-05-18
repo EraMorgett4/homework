@@ -5,6 +5,7 @@
 GIF파일이 너무 용량이 커서 아래와 같이 링크 첨부합니다.
 
 [![결과물](http://img.youtube.com/vi/Nubkvpzw_0Y/0.jpg)](https://youtu.be/Nubkvpzw_0Y?si=jqCZbD14k0plbw5z)
+
 위 썸네일 클릭하시면 됩니다.
 
 # 테킷 FES homework - Apple 프로젝트
