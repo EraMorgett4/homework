@@ -4,6 +4,7 @@
 
 1. [`avatars.md` 링크](https://github.com/EraMorgett4/homework/blob/main/avatars/avatars.md)
 2. [`naver.md` 링크](https://github.com/EraMorgett4/homework/blob/main/naver/naver.md)
+3. [`apple.md` 링크](https://github.com/EraMorgett4/homework/blob/main/apple/apple.md)
 
 ## 피드백
 
@@ -41,6 +42,13 @@
 - 과제 구현 과정에 대한 설명
   - 구조를 직접 그려본 점에 대해 칭찬하고 싶어요. 다만 과제를 해결하는 과정만 적지말고 회고처럼 느낀점 또는 앞으로 성장해야 할 방향 등에 대해 더 적었으면 좋았을 것 같아요.
   - 이제 마지막 과제가 남아있으니 해당 과제에서 이런 부분이 기재되어 있기를 기대해볼께요.
+
+</div>
+</details>
+
+<details>
+<summary>3차 과제 피드백</summary> 
+<div markdown="0">
 
 </div>
 </details>
